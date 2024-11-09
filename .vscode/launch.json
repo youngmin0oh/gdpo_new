@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python Debugger: Generate",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "main_generate.py",
+            "console": "integratedTerminal",
+            "args": ["dataset=toy", "+experiment=toy_ppo.yaml", "dataset.nodes=8", "general.fix=0.", "train.lr=1e-5", 
+                "general.train_method=gdpo", 
+                "general.val_method=ppo", 
+                "general.step_freq=1", 
+                "general.innerloop=1", 
+                "general.sampleloop=1", ]
+        }
+    ]
+}
